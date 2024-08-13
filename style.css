@@ -1,0 +1,160 @@
+* {
+  padding: 0;
+  margin: 0;
+  color: whitesmoke;
+}
+
+body {
+  background: #001522;
+  padding: 10px;
+  scroll-behavior: smooth;
+}
+
+.container {
+  position: static;
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto;
+  gap: 10px
+}
+
+.container img {
+  height: 300px;
+  width: 100%;
+  object-fit: cover;
+  box-sizing: border-box;
+  background: #001013;
+  border-radius: 20px;
+  border: 3px solid #030303;
+  transform: scale(1);
+  transition: transform 1s ease;
+}
+
+.container img:hover {
+  transform: scale(0.9);
+  transition: transform 1s ease;
+}
+
+.menu {
+  display: grid;
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translate(-50%);
+  background: #002029;
+  border: 2px solid #000;
+  height: 50px;
+  width: 60%;
+  z-index: 1;
+  border-radius: 30px;
+  grid-template-columns: auto auto auto auto;
+}
+
+.icon-menu {
+  text-align: center;
+  align-content: center;
+}
+
+
+@keyframes anim {
+  from {
+    transform: translateX(-160%);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+@keyframes opacidade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+#info {
+  z-index: 2;
+  position: fixed;
+  top: 10px;
+  background: #0099aa;
+  width: 85%;
+  height: 100px;
+  text-align: center;
+  left: 50%;
+  transform: translate(-50%);
+  border-radius: 10px;
+  align-content: center;
+  overflow: auto;
+  padding: 1px 7px;
+  animation: anim 1s ease-in-out;
+}
+
+@media (min-width: 475px) {
+  .container img{
+    height: 350px;
+  }
+}
+
+@media (min-width: 512px) {
+  .container img {
+    height: 500px;
+  }
+  
+  .menu {
+    width: 50%
+  }
+}
+
+@media (min-width: 700px) {
+  .container {
+    grid-template-columns: auto auto auto;
+  }
+  
+  .container img {
+    height: 400px;
+  }
+  
+  .menu {
+    width: 40%
+  }
+  
+  #info {
+    width: 70%;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    grid-template-columns: auto auto auto auto;
+  }
+  .container img {
+    height: 400px;
+  }
+  
+  .menu {
+    width: 30%
+  }
+  
+  #info {
+    width: 50%;
+  }
+}
+
+@media (min-width: 2000px) {
+  .container {
+    grid-template-columns: auto auto auto auto auto;
+  }
+  .container img {
+    height: 600px;
+  }
+  
+  .menu {
+    width: 20%
+  }
+  
+  #info {
+    width: 35%;
+  }
+}
